@@ -1,0 +1,14 @@
+package br.com.devopstech.projeto.dao;
+
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.PagingAndSortingRepository;
+
+import java.util.List;
+
+import br.com.devopstech.projeto.model.Parceiros;
+
+public interface ParceirosDAO extends PagingAndSortingRepository<Parceiros, Integer>, CrudRepository<Parceiros, Integer>{	
+	
+	List<Parceiros> findAllOrderByVolumeDesc();
+	
+}

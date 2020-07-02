@@ -1,0 +1,25 @@
+package br.com.devopstech.projeto.model;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="mtb310_ag_financeiro")
+public class Parceiros {
+	
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="id_agente")
+	private int id_agente;
+	
+	@Column(name="nome_agente", length=100)
+	private String nome_agente;
+	
+	@Column(name="volume_transacional")
+	private float volume_transacional;
+	
+}

@@ -1,0 +1,29 @@
+package br.com.devopstech.projeto.controller;
+
+import java.util.ArrayList;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import br.com.devopstech.projeto.dao.ParceirosDAO;
+import br.com.devopstech.projeto.dao.TransacoesDAO;
+import br.com.devopstech.projeto.model.Parceiros;
+import br.com.devopstech.projeto.model.Transacoes;
+
+@CrossOrigin(origins = "*")
+@RestController
+public class TransacoesController {
+
+	@Autowired //injeção da dependência - não precisa implementar pois o framework cria
+	private TransacoesDAO dao;
+	
+	@GetMapping("/transacoes")
+	public ArrayList<Transacoes> listarTudo(){
+		ArrayList<Transacoes> lista = (ArrayList<Transacoes>) dao.findAll();
+		
+		return lista;
+	}
+
+}

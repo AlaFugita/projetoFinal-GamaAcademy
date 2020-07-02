@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="br.com.devopstech.projeto.model.Parceiros"/>
+<fullyQualifiedTypeName name="org.hibernate.dialect.function.StandardAnsiSqlAggregationFunctions.SumFunction"/>
+<fullyQualifiedTypeName name="org.hibernate.mapping.List"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="org.springframework.data.domain.Sort"/>
+<fullyQualifiedTypeName name="org.springframework.data.domain.Sort.Direction"/>
+</qualifiedTypeNameHistroy>

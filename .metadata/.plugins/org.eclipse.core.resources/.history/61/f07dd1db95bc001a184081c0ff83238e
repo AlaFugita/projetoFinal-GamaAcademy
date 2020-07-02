@@ -1,0 +1,15 @@
+package br.com.devopstech.projeto.dao;
+
+import org.springframework.data.repository.CrudRepository;
+
+import java.util.List;
+
+import javax.persistence.Query;
+
+import br.com.devopstech.projeto.model.Parceiros;
+
+public interface ParceirosDAO extends CrudRepository<Parceiros, Integer>{
+	
+	 List<Parceiros> findAllOrderByVolume();
+	
+}

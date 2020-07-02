@@ -1,0 +1,8 @@
+package br.com.devopstech.projeto.dao;
+
+import org.springframework.data.repository.CrudRepository;
+import br.com.devopstech.projeto.model.Transacoes;
+
+public interface TransacoesDAO extends CrudRepository<Transacoes, Integer>{
+	
+}
