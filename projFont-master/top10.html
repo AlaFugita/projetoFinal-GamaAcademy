@@ -8,7 +8,11 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
-    <script type="text/javascript" src="/js/agentes.js"></script>
+    <script type="text/javascript" src="/js/top10.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
     <title>Top 10</title>
 </head>
@@ -22,14 +26,33 @@
         </div>
     </div>
 
+    <!-- <div class="container-fluid">
+        <div class="row">
+            <div class="dropdown p-1">
+                <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="polo" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">Parceiros</button>
+                <div class="dropdown-menu polo" id="dropdown-polo" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#1">Magalu</a>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <div class="container d-flex">
+        <form>
+            <input type="text" class="form-control" placeholder="Digite o agente" id="txtAgente">
+            <button type="submit" class="btn btn-outline-primary" onclick="selecionar(event)">Submit</button>
+        </form>
+    </div>
+
     <div class="container d-flex">
         <div class="row">
             <div class="col" id="conteudo">
                 <!-- aqui vai a lista de departamentos -->
-    
+
             </div>
         </div>
     </div>
-    
+
 
 </html>

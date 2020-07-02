@@ -1,14 +1,12 @@
 function iniciar(){
     let user = localStorage.getItem("usuarioLogado");
+    let idAgente = localStorage.getItem("idAgente");
 
     if(!user){
         window.location = "index.html";
     }
 
-    let nomeUsuario = JSON.parse(user).racf;
-
-    document.getElementById("user").innerHTML = "Bem-vindo, " + nomeUsuario;
-    carregarDados();
+    carregarDados(idAgente);
 }
 
 function logout(){
@@ -16,32 +14,17 @@ function logout(){
     window.location = "index.html";
 }
 
-function carregarDados(){
-    fetch("http://localhost:8080/parceiros")
+function voltar(){
+    window.location = "top10.html";
+}
+
+function carregarDados(id){
+    fetch("http://localhost:8080/parceiros/" + id)
     .then(res => res.json())
     .then(res => preencher(res));
 }
 
 function preencher(res){
-    let texto = `<table>
-                    <tr>
-                        <th>ID Parceiro</th>
-                        <th>Nome Parceiro</th>
-                        <th>Volume Transacional</th>
-                    </tr>`;
-
-    for (let index = 0; index < res.length; index++) {
-        
-        texto = texto + `<tr>
-                            <td>${res[index].id_agente}</td>
-                            <td><a href="http://www.google.com" target="_blank">${res[index].nome_agente}</a></td>
-                            <td>${res[index].volume}</td>
-                        </tr>`;
-        
-    }
-        
-    texto = texto + `</table>`;
-
-    document.getElementById("conteudo").innerHTML = texto;
-
+    document.getElementById("parceiro").innerHTML = "Parceiro: " + res.nome_agente;
+    document.getElementById("conteudoParceiro").innerHTML = "Volume de transações: " + res.volume;
 }
