@@ -20,27 +20,28 @@
 <body onload="iniciar()">
     <div class="row align-items-center">
         <div class="col text-center">
-            <h1 id="user"></h1>
-
-            <button class="btn btn-primary" onclick="logout()">Logout</button>
+            <h1 id="user" style="margin-top: 1em;"></h1>
         </div>
     </div>
 
-    <div class="container-fluid">
+    <div class="container-fluid" style="width: 50%; margin-bottom: 3vh; margin-top: 3vh;">
         <div class="row">
-            <select class="form-control" id="parceiros" onchange="selecionar(event)">
+            <select class="form-control" id="parceiros" onchange="selecionar(event)" style="font-size: 2vw;">
                 <!-- aqui vai a lista de parceiros -->
             </select>
         </div>
     </div>
-    
-    <div class="container d-flex">
+
+    <div class="container align-items-center">
         <div class="row">
             <div class="col" id="conteudo">
                 <!-- aqui vai a tabela de parceiros -->
             </div>
         </div>
     </div>
-
-
+        <div class="col text-center mx-auto">
+            <footer class="page-footer px-auto">
+                <button class="btn btn-danger" onclick="logout()">Logout</button>
+            </footer>
+        </div>
 </html>

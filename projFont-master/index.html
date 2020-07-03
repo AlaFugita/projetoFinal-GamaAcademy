@@ -9,6 +9,8 @@
 
     <link rel="stylesheet" href="/css/estilo.css">
 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
     <script type="text/javascript" src="/js/login.js"></script>
 
     <title>Login</title>
@@ -21,15 +23,24 @@
                 <div class="jumbotron">
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="text-center" id="msgError"></div>
+                            <div class="text-center" id="msgError" style="font-weight: bold; color: red; margin-bottom: 2vh;"></div>
                         </div>
                     </div>
                     <form>
-                        <input type="text" class="form-control" placeholder="Digite seu e-mail ou racf" id="txtLogin">
-                        <input type="password" class="form-control" placeholder="Senha" id="txtSenha">
+                        <div class="input-group-prepend">
+                            <i class="fas fa-user p-3" style="font-size: 2vw;"></i>
+                            <input type="text" class="form-control p-2 m-0" placeholder="Digite seu e-mail ou racf"
+                                id="txtLogin" style="font-size: 2vw;">
+                        </div>
+                        <div class="input-group-prepend">
+                            <i class="fas fa-lock p-3" style="font-size: 2vw;"></i>
+                            <input type="password" class="form-control p-2 m-0 mt-2" placeholder="Senha" id="txtSenha"
+                                style="font-size: 2vw;">
+                        </div>
                         <div class="col text-center">
-                            <button type="submit" class="btn btn-outline-primary" onclick="autenticar(event)">Login</button>
-                            <button type="submit" class="btn btn-outline-primary" onclick="apresentar(event)">Apresentacao</button>
+                            <button type="submit" class="btn btn-outline-primary m-0 mt-2"
+                                onclick="autenticar(event)">Login</value="Login" button style="font-size: 3em;">
+                                <!-- <button type="submit" class="btn btn-outline-primary" onclick="apresentar(event)">Apresentacao</button> -->
                         </div>
                     </form>
                 </div>

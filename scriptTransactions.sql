@@ -1,17 +1,3 @@
-SELECT * FROM MTB310_USUARIOS;
-SELECT * FROM MTB310_ag_financeiro;
-SELECT * FROM MTB310_TRANSACTION;
-
-DROP TABLE MTB310_TRANSACTION;
-DROP TABLE MTB310_ag_financeiro;
-
-create table mtb310_ag_financeiro(
-   id_agente integer not null auto_increment,  
-   nome_agente varchar(100),
-   volume_transacional float,
-   constraint pk_agente primary key (id_agente)
-);
-
 create table mtb310_transaction(
     id_transacao integer not null auto_increment,
     data_hora datetime,
@@ -24,18 +10,6 @@ create table mtb310_transaction(
     constraint fk_agente foreign key (parc_id_agente) references mtb310_ag_financeiro(id_agente)
 );
 
-insert into mtb310_ag_financeiro values 
-    (null, 'MAGALU Financeira', 1231),
-    (null, 'SANTANDER Cartoes', 81212),
-    (null, 'ITAU/Uniclass Cards', 9912),
-    (null, 'SUBMARINO Cartoes',63421),
-    (null, 'HIPERCARD',98273),
-    (null, 'ITAU Virtual',12129),
-    (null, 'PICPAY Cartoes',812),
-    (null, 'SAMS CLUB Mastercard',965),
-    (null, 'EXTRA Cartoes VISA',112909),
-    (null, 'CARREFOUR Credito Master',191218);
-    
     
 INSERT INTO mtb310_transaction values (null, '2020-06-01 12:7:14',780, 1242.05, 0.00, 1, 3); 
 INSERT INTO mtb310_transaction values (null, '2020-06-01 4:37:43',538, 2647.34, 0.00, 2, 2); 
