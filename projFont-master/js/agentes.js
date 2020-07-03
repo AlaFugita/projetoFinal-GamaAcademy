@@ -25,6 +25,22 @@ function carregarDados(id){
 }
 
 function preencher(res){
+
+    let somaAutorizados = 0;
+    let somaRecusados = 0;
+    let somaFraudes = 0;
+
+    for (let index = 0; index < res.listaTransacoes.length; index++) {
+        if (res.listaTransacoes[index].status == 0) {
+            somaAutorizados++;
+        } else if (res.listaTransacoes[index].status == 1) {
+            somaRecusados++;
+        } else {
+            somaFraudes++;
+        }
+    }
+
+
     document.getElementById("parceiro").innerHTML = "Parceiro: " + res.nome_agente;
-    document.getElementById("conteudoParceiro").innerHTML = "Volume de transações: " + res.volume;
+    document.getElementById("conteudoParceiro").innerHTML = "Volume autorizados: " + somaAutorizados + "<br>Volume recusados: " + somaRecusados + "<br>Volume fraudes : " + somaFraudes;
 }
