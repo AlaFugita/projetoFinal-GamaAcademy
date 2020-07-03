@@ -26,30 +26,18 @@
         </div>
     </div>
 
-    <!-- <div class="container-fluid">
+    <div class="container-fluid">
         <div class="row">
-            <div class="dropdown p-1">
-                <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="polo" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">Parceiros</button>
-                <div class="dropdown-menu polo" id="dropdown-polo" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#1">Magalu</a>
-                </div>
-            </div>
+            <select class="form-control" id="parceiros" onchange="selecionar(event)">
+                <!-- aqui vai a lista de parceiros -->
+            </select>
         </div>
-    </div> -->
-
-    <div class="container d-flex">
-        <form>
-            <input type="text" class="form-control" placeholder="Digite o agente" id="txtAgente">
-            <button type="submit" class="btn btn-outline-primary" onclick="selecionar(event)">Submit</button>
-        </form>
     </div>
-
+    
     <div class="container d-flex">
         <div class="row">
             <div class="col" id="conteudo">
-                <!-- aqui vai a lista de departamentos -->
-
+                <!-- aqui vai a tabela de parceiros -->
             </div>
         </div>
     </div>

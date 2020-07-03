@@ -42,5 +42,5 @@ function preencher(res){
 
 
     document.getElementById("parceiro").innerHTML = "Parceiro: " + res.nome_agente;
-    document.getElementById("conteudoParceiro").innerHTML = "Volume autorizados: " + somaAutorizados + "<br>Volume recusados: " + somaRecusados + "<br>Volume fraudes : " + somaFraudes;
+    document.getElementById("conteudoParceiro").innerHTML = "Volume Transacional: " + res.volume + "<br> Volume autorizados: " + somaAutorizados + "<br>Volume recusados: " + somaRecusados + "<br>Volume fraudes : " + somaFraudes;
 }

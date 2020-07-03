@@ -647,3 +647,4 @@ org.eclipse.core.runtime.CoreException: Launch configuration ProjetoFinalApplica
 2020-07-02 16:37:23,246 [Worker-80: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
 2020-07-02 16:37:23,248 [Worker-80: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2020-07-02 16:37:23,248 [Worker-80: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\987287448\Desktop\Projeto Final\projDashboard-master\src\test\resources
+2020-07-03 08:37:35,314 [Worker-3: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.

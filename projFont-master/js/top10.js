@@ -24,7 +24,9 @@ function carregarDados(){
 
 function preencher(res){
 
-    let texto = `<table>
+    let lista = ``
+
+    let texto = `<table class="table table-sm">
                     <tr>
                         <th>ID Parceiro</th>
                         <th>Nome Parceiro</th>
@@ -32,6 +34,8 @@ function preencher(res){
                     </tr>`;
 
     for (let index = 0; index < res.length; index++) {
+
+        lista = lista + `<option value = ${res[index].id_agente}>${res[index].nome_agente}</option>`;
         
         texto = texto + `<tr>
                             <td>${res[index].id_agente}</td>
@@ -43,13 +47,14 @@ function preencher(res){
         
     texto = texto + `</table>`;
 
+    document.getElementById("parceiros").innerHTML = lista;
     document.getElementById("conteudo").innerHTML = texto;
 
 }
 
 function selecionar(event){
     event.preventDefault();
-    let txtAgente = document.getElementById("txtAgente").value;
+    let txtAgente = document.getElementById("parceiros").value;
     localStorage.setItem("idAgente", txtAgente);
     console.log(localStorage.getItem("idAgente"));
     window.location = "agente.html";
