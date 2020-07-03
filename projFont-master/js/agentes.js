@@ -48,10 +48,10 @@ function preencher(res) {
 
     document.getElementById("parceiro").innerHTML = "Parceiro: " + res.nome_agente;
     document.getElementById("conteudoJumbotron").innerHTML = `
-    <div class="jumbotron" style="font-weight:bold; min-width: 17vw; max-height: 8vh; padding: 4%">Total: `+(somaAutorizados+somaRecusados+somaFraudes)+`</div>
     <div class="jumbotron" style="min-width: 17vw;padding: 4%; max-height: 8vh;">Autorizadas: `+ somaAutorizados+`</div>
     <div class="jumbotron" style="min-width: 17vw;padding: 4%; max-height: 8vh;">Recusadas: `+somaRecusados+`</div>
-    <div class="jumbotron" style="min-width: 17vw;padding: 4%; max-height: 8vh;">Fraudes: `+somaFraudes+`</div>`;
+    <div class="jumbotron" style="min-width: 17vw;padding: 4%; max-height: 8vh;">Fraudes: `+somaFraudes+`</div>
+    <div class="jumbotron" style="font-weight:bold; min-width: 17vw; max-height: 8vh; padding: 4%">Total: `+(somaAutorizados+somaRecusados+somaFraudes)+`</div>`;
 }
 
 function carregarDadosTotal() {
