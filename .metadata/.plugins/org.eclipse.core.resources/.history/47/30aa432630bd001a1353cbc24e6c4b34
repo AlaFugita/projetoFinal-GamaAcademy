@@ -1,0 +1,36 @@
+package br.com.devopstech.projeto.controller;
+
+import java.util.ArrayList;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import br.com.devopstech.projeto.dao.TransacoesDAO;
+import br.com.devopstech.projeto.model.Transacoes;
+
+@CrossOrigin(origins = "*")
+@RestController
+public class TransacoesController {
+
+	@Autowired //injeção da dependência - não precisa implementar pois o framework cria
+	private TransacoesDAO dao;
+	
+	@PostMapping("/transacoes")
+	public ResponseEntity<Transacoes> contagem (@RequestBody Transacoes incompleto) {
+		
+		Transacoes resultado = dao.countByStatus(incompleto.getStatus());
+		if (resultado != null) {
+			return ResponseEntity.ok(resultado);
+			return ResponseEntity.status(403).build ();
+		}
+		}
+		else {
+			return ResponseEntity.notFound().build();
+		}	
+	}
+}

@@ -24,7 +24,8 @@ function carregarDados(){
 
 function preencher(res){
 
-    let lista = ``
+    let lista = `<option>Selecione uma opção</option>
+                <option value = 0>Total</option>`;
 
     let texto = `<table class="table table-sm">
                     <tr>

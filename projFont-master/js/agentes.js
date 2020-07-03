@@ -6,7 +6,13 @@ function iniciar(){
         window.location = "index.html";
     }
 
-    carregarDados(idAgente);
+    console.log(idAgente);
+
+    if (idAgente != 0) {
+        carregarDados(idAgente);        
+    } else {
+        carregarDadosTotal();
+    }
 }
 
 function logout(){
@@ -40,7 +46,37 @@ function preencher(res){
         }
     }
 
-
     document.getElementById("parceiro").innerHTML = "Parceiro: " + res.nome_agente;
     document.getElementById("conteudoParceiro").innerHTML = "Volume Transacional: " + res.volume + "<br> Volume autorizados: " + somaAutorizados + "<br>Volume recusados: " + somaRecusados + "<br>Volume fraudes : " + somaFraudes;
+}
+
+function carregarDadosTotal(){
+    fetch("http://localhost:8080/parceiros")
+    .then(res => res.json())
+    .then(res => preencherTotal(res));
+}
+
+function preencherTotal(res){
+
+    let somaAutorizados = 0;
+    let somaRecusados = 0;
+    let somaFraudes = 0;
+
+    for (let index = 0; index < res.length; index++) {
+        
+        for (let index2 = 0; index2 < res[index].listaTransacoes.length; index2++) {
+
+            if (res[index].listaTransacoes[index2].status == 0) {
+                somaAutorizados++;
+            } else if (res[index].listaTransacoes[index2].status == 1) {
+                somaRecusados++;
+            } else {
+                somaFraudes++;
+            }
+        }  
+
+    }
+
+    document.getElementById("parceiro").innerHTML = "Volume Total dos Parceiros";
+    document.getElementById("conteudoParceiro").innerHTML = "Volume autorizados: " + somaAutorizados + "<br>Volume recusados: " + somaRecusados + "<br>Volume fraudes : " + somaFraudes;
 }
