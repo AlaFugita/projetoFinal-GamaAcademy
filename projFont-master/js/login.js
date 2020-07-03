@@ -35,3 +35,7 @@ function tratarResposta(res){
 function logarUsuario(res){
     localStorage.setItem("usuarioLogado", JSON.stringify(res));
 }
+
+function apresentar(event){
+    window.location = "apresentacao.html";
+}

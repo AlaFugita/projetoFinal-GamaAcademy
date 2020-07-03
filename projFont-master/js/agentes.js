@@ -1,36 +1,36 @@
-function iniciar(){
+function iniciar() {
     let user = localStorage.getItem("usuarioLogado");
     let idAgente = localStorage.getItem("idAgente");
 
-    if(!user){
+    if (!user) {
         window.location = "index.html";
     }
 
     console.log(idAgente);
 
     if (idAgente != 0) {
-        carregarDados(idAgente);        
+        carregarDados(idAgente);
     } else {
         carregarDadosTotal();
     }
 }
 
-function logout(){
+function logout() {
     localStorage.removeItem("usuarioLogado");
     window.location = "index.html";
 }
 
-function voltar(){
+function voltar() {
     window.location = "top10.html";
 }
 
-function carregarDados(id){
+function carregarDados(id) {
     fetch("http://localhost:8080/parceiros/" + id)
-    .then(res => res.json())
-    .then(res => preencher(res));
+        .then(res => res.json())
+        .then(res => preencher(res));
 }
 
-function preencher(res){
+function preencher(res) {
 
     let somaAutorizados = 0;
     let somaRecusados = 0;
@@ -50,20 +50,20 @@ function preencher(res){
     document.getElementById("conteudoParceiro").innerHTML = "Volume Transacional: " + res.volume + "<br> Volume autorizados: " + somaAutorizados + "<br>Volume recusados: " + somaRecusados + "<br>Volume fraudes : " + somaFraudes;
 }
 
-function carregarDadosTotal(){
+function carregarDadosTotal() {
     fetch("http://localhost:8080/parceiros")
-    .then(res => res.json())
-    .then(res => preencherTotal(res));
+        .then(res => res.json())
+        .then(res => preencherTotal(res));
 }
 
-function preencherTotal(res){
+function preencherTotal(res) {
 
     let somaAutorizados = 0;
     let somaRecusados = 0;
     let somaFraudes = 0;
 
     for (let index = 0; index < res.length; index++) {
-        
+
         for (let index2 = 0; index2 < res[index].listaTransacoes.length; index2++) {
 
             if (res[index].listaTransacoes[index2].status == 0) {
@@ -73,7 +73,7 @@ function preencherTotal(res){
             } else {
                 somaFraudes++;
             }
-        }  
+        }
 
     }
 

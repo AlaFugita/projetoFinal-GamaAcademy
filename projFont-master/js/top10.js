@@ -1,7 +1,7 @@
-function iniciar(){
+function iniciar() {
     let user = localStorage.getItem("usuarioLogado");
 
-    if(!user){
+    if (!user) {
         window.location = "index.html";
     }
 
@@ -11,18 +11,18 @@ function iniciar(){
     carregarDados();
 }
 
-function logout(){
+function logout() {
     localStorage.removeItem("usuarioLogado");
     window.location = "index.html";
 }
 
-function carregarDados(){
+function carregarDados() {
     fetch("http://localhost:8080/parceiros")
-    .then(res => res.json())
-    .then(res => preencher(res));
+        .then(res => res.json())
+        .then(res => preencher(res));
 }
 
-function preencher(res){
+function preencher(res) {
 
     let lista = `<option>Selecione uma opção</option>
                 <option value = 0>Total</option>`;
@@ -37,15 +37,15 @@ function preencher(res){
     for (let index = 0; index < res.length; index++) {
 
         lista = lista + `<option value = ${res[index].id_agente}>${res[index].nome_agente}</option>`;
-        
+
         texto = texto + `<tr>
                             <td>${res[index].id_agente}</td>
                             <td>${res[index].nome_agente}</td>
                             <td>${res[index].volume}</td>
                         </tr>`;
-        
+
     }
-        
+
     texto = texto + `</table>`;
 
     document.getElementById("parceiros").innerHTML = lista;
@@ -53,7 +53,7 @@ function preencher(res){
 
 }
 
-function selecionar(event){
+function selecionar(event) {
     event.preventDefault();
     let txtAgente = document.getElementById("parceiros").value;
     localStorage.setItem("idAgente", txtAgente);
